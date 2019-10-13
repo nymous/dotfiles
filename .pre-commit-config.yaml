@@ -1,0 +1,10 @@
+repos:
+-   repo: local
+    hooks:
+    # Largely copied from https://github.com/Lucas-C/pre-commit-hooks-nodejs#markdown-toc
+    -   id: markdown-toc
+        name: Insert a table of contents in Markdown files
+        entry: bash -c 'echo "$@" | xargs -n1 markdown-toc -i' --
+        language: node
+        additional_dependencies: [markdown-toc]
+        types: [file, markdown]
