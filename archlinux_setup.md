@@ -33,9 +33,9 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 ::1   localhost
 127.0.1.1 myhostname.localdomain  myhostname
 ```
-19. Set the root password (make sure you have the correct keyboard layout!): `passwd`
-20. Install `systemd-boot`: make sure the ESP is mounted on `/boot` and run `bootctl --path=/boot install`
-21. Create a post-install hook to automatically update systemd-boot in the ESP when the package is upgraded: `/etc/pacman.d/hooks/100-systemd-boot.hook`
+18. Set the root password (make sure you have the correct keyboard layout!): `passwd`
+19. Install `systemd-boot`: make sure the ESP is mounted on `/boot` and run `bootctl --path=/boot install`
+20. Create a post-install hook to automatically update systemd-boot in the ESP when the package is upgraded: `/etc/pacman.d/hooks/100-systemd-boot.hook`
 ```ini
 [Trigger]
 Type = Package
@@ -47,8 +47,8 @@ Description = Updating systemd-boot...
 When = PostTransaction
 Exec = /usr/bin/bootctl update
 ```
-22. Install CPU microcode: `pacman -Sy && pacman -S amd-ucode`
-23. Create a new boot entry which combines Linux and the microcode: `/boot/loader/entries/arch.conf`
+21. Install CPU microcode: `pacman -Sy && pacman -S amd-ucode`
+22. Create a new boot entry which combines Linux and the microcode: `/boot/loader/entries/arch.conf`
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
@@ -56,24 +56,24 @@ initrd  /amd-ucode.img
 initrd  /initramfs-linux.img
 options root=UUID=<UUID of the / partition> rw
 ```
-24. Configure systemd-boot: `/boot/loader/loader.conf`
+23. Configure systemd-boot: `/boot/loader/loader.conf`
 ```
 default arch
 ```
-25. Setup the network for DHCP: `/etc/NetworkManager/conf.d/dhcp-client.conf`
+24. Setup the network for DHCP: `/etc/NetworkManager/conf.d/dhcp-client.conf`
 ```ini
 [main]
 dhcp=dhclient
 ```
-26. Setup the DNS with `dnsmasq`: `/etc/NetworkManager/conf.d/dns.conf`
+25. Setup the DNS with `dnsmasq`: `/etc/NetworkManager/conf.d/dns.conf`
 ```ini
 [main]
 dns=dnsmasq
 ```
-27. Start and enable NetworkManager: `systemctl start NetworkManager && systemctl enable NetworkManager`
-28. Create a user: `useradd -m -G wheel -s /usr/bin/zsh nymous && passwd nymous`
-29. Allow `wheel` group to use sudo: `EDITOR=vim visudo` and uncomment the line `%wheel ALL=(ALL) ALL`
-30. Reboot, you should be in your new Arch installation now!
+26. Start and enable NetworkManager: `systemctl start NetworkManager && systemctl enable NetworkManager`
+27. Create a user: `useradd -m -G wheel -s /usr/bin/zsh nymous && passwd nymous`
+28. Allow `wheel` group to use sudo: `EDITOR=vim visudo` and uncomment the line `%wheel ALL=(ALL) ALL`
+29. Reboot, you should be in your new Arch installation now!
 
 ## Post-installation
 
