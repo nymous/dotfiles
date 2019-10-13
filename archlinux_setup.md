@@ -19,7 +19,7 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 6. Format the partitions: `mkfs.ext4 /dev/<whatever>` and `mkswap /dev/<swap>` + `swapon /dev/<swap>`
 7. Mount the filesystems: `mount /dev/<whatever> /mnt`, `mkdir /mnt/boot`, `mount /dev/<ESP> /mnt/boot`
 8. Select best mirrors: `pacman -Sy && pacman -S reflector && reflector --verbose --country France --latest 10 --sort rate --save /etc/pacman.d/mirrorlist`
-9. Bootstrap the system: `pacstrap /mnt base linux linux-firmware vim man-db man-pages texinfo`
+9. Bootstrap the system: `pacstrap /mnt base base-devel linux linux-firmware vim man-db man-pages networkmanager dhclient dnsmasq zsh git`
 10. Generate the `fstab` file: `genfstab -U /mnt >> /mnt/etc/fstab`, add `,lazytime` after `relatime` to avoid writing access time everytime a file is read (but wait for a write to happen to bundle it with it) while still keeping access times (some applications need it)
 11. Chroot into the new system: `arch-chroot /mnt`
 12. Set the timezone: `ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime` and `hwclock --systohc`
@@ -36,7 +36,7 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 19. Set the root password (make sure you have the correct keyboard layout!): `passwd`
 20. Install `systemd-boot`: make sure the ESP is mounted on `/boot` and run `bootctl --path=/boot install`
 21. Create a post-install hook to automatically update systemd-boot in the ESP when the package is upgraded: `/etc/pacman.d/hooks/100-systemd-boot.hook`
-```toml
+```ini
 [Trigger]
 Type = Package
 Operation = Upgrade
@@ -60,6 +60,35 @@ options root=UUID=<UUID of the / partition> rw
 ```
 default arch
 ```
-25. Reboot, you should be in your new Arch installation now!
+25. Setup the network for DHCP: `/etc/NetworkManager/conf.d/dhcp-client.conf`
+```ini
+[main]
+dhcp=dhclient
+```
+26. Setup the DNS with `dnsmasq`: `/etc/NetworkManager/conf.d/dns.conf`
+```ini
+[main]
+dns=dnsmasq
+```
+27. Start and enable NetworkManager: `systemctl start NetworkManager && systemctl enable NetworkManager`
+28. Create a user: `useradd -m -G wheel -s /usr/bin/zsh nymous && passwd nymous`
+29. Allow `wheel` group to use sudo: `EDITOR=vim visudo` and uncomment the line `%wheel ALL=(ALL) ALL`
+30. Reboot, you should be in your new Arch installation now!
 
 ## Post-installation
+
+1. Install `yay`:
+```sh
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sic
+```
+2. Configure pacman for colored output: uncomment the `#Color` line in `/etc/pacman.conf`
+3. Configure `makepkg` for:
+   1. better make performance: change `MAKEFLAGS="-j2"` to `MAKEFLAGS="-j$(nproc)"`
+   2. better compress performance: install `pigz` and `pbzip2` then edit the end of the file with the following
+```shell
+COMPRESSGZ=(pigz -c -f -n)
+COMPRESSBZ2=(pbzip2 -c -f)
+COMPRESSXZ=(xz -c -z - --threads=0)
+```
