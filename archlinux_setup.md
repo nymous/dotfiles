@@ -77,14 +77,8 @@ dns=dnsmasq
 
 ## Post-installation
 
-1. Install `yay`:
-```sh
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -sic
-```
-2. Configure pacman for colored output: uncomment the `#Color` line in `/etc/pacman.conf`
-3. Configure `makepkg` for:
+1. Configure pacman for colored output: uncomment the `#Color` line in `/etc/pacman.conf`
+2. Configure `/etc/makepkg.conf` for:
    1. better make performance: change `MAKEFLAGS="-j2"` to `MAKEFLAGS="-j$(nproc)"`
    2. better compress performance: install `pigz` and `pbzip2` then edit the end of the file with the following
 ```shell
@@ -92,3 +86,30 @@ COMPRESSGZ=(pigz -c -f -n)
 COMPRESSBZ2=(pbzip2 -c -f)
 COMPRESSXZ=(xz -c -z - --threads=0)
 ```
+3. Install `yay`:
+```sh
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sic
+```
+4. Enable `multilib` repo by uncommenting its lines in `/etc/pacman.conf` then run `sudo pacman -Syu`
+5. Install `xorg mesa amdvlk clang llvm-libs vulkan-mesa-layer vulkan-radeon xf86-video-amdgpu lib32-mesa lib32-vulkan-radeon` (see <https://wiki.archlinux.org/index.php/Navi_10>) with `yay` (because `amdvlk` comes from the AUR, choose `amdvlk` when it asks which package to install if you are ready to wait for the compilation, or `amdvlk-bin` if you're not ^^)
+6. Load drivers early in the boot process: edit `/etc/mkinitcpio.conf` to add `MODULES=(amdgpu)` then regenerate the initramfs: `sudo mkinitcpio -p linux`
+7. Enable FreeSync: create `/etc/X11/xorg.conf.d/10-freesync.conf` with the following content:
+```
+Section "Device"
+        Identifier "Card0"
+        Option "VariableRefresh" "true"
+EndSection
+```
+8. Install `numlockx`
+9. Install `i3` and choose `i3-gaps` over `i3-wm`
+10. Install a terminal, eg. `alacritty` (with `alacritty-terminfo`)
+11. Install `xorg-xinit`, copy the configuration file from `/etc/X11/xinit/xinitrc` to `~/.xinitrc`, then edit the last lines with the following:
+```shell
+numlockx &
+exec i3
+```
+11. Since version 1.44 Pango doesn't support bitmap fonts anymore, so you need to install an OTF/TTF font such as Fira Code: `otf-fira-code` (you can remove `xorg-fonts-{75,100}dpi`)
+12. You can now finally start the X server! `startx` \o/
+13. For hardware decoding and encoding you can install `libva-mesa-driver` and `mesa-vdpau`, and check that everything works with `vainfo` and `vdpauinfo` (available in the packages `libva-utils` and `vdpauinfo`)
