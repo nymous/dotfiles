@@ -113,3 +113,8 @@ exec i3
 11. Since version 1.44 Pango doesn't support bitmap fonts anymore, so you need to install an OTF/TTF font such as Fira Code: `otf-fira-code` (you can remove `xorg-fonts-{75,100}dpi`)
 12. You can now finally start the X server! `startx` \o/
 13. For hardware decoding and encoding you can install `libva-mesa-driver` and `mesa-vdpau`, and check that everything works with `vainfo` and `vdpauinfo` (available in the packages `libva-utils` and `vdpauinfo`)
+14. Now that you have a graphical interface you should install a browser, so that you can copy-paste commands instead of retyping them from another computer ^^' `yay -Sy firefox-nightly`
+15. Install the launcher (you need to run Firefox at some point): `yay -Sy rofi` and add a keybind in the i3 config: `bindsym $mod+d exec rofi -show drun -matching fuzzy -show-icons`
+16. Create your SSH key: `ssh-keygen -o -a 100 -t ed25519 -C "<user>@<hostname>"` (from <https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54>)
+17. Clone this repository: `git clone git@github.com:nymous/dotfiles.git`
+18. Install [twpayne/chezmoi](https://github.com/twpayne/chezmoi): `yay -Sy chezmoi`
