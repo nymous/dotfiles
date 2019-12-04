@@ -1,0 +1,10 @@
+[user]
+	email = thomas.gaudin@centraliens-lille.org
+	name = Thomas Gaudin
+[core]
+	editor = vim
+[alias]
+	it = !git init && git commit -m "root" --allow-empty
+[includeIf "gitdir:~/Documents/Adeo/"]
+	path = ~/Documents/Adeo/gitconfig_include
+
