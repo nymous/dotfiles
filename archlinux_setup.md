@@ -18,7 +18,7 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 5. Partition the disk: only 2 partitions, one for `/` and a swap partition (with `fdisk`)
 6. Format the partitions: `mkfs.ext4 /dev/<whatever>` and `mkswap /dev/<swap>` + `swapon /dev/<swap>`
 7. Mount the filesystems: `mount /dev/<whatever> /mnt`, `mkdir /mnt/boot`, `mount /dev/<ESP> /mnt/boot`
-8. Select best mirrors: `pacman -Sy && pacman -S reflector && reflector --verbose --country France --latest 10 --sort rate --save /etc/pacman.d/mirrorlist`
+8. Select best mirrors: `pacman -Sy reflector && reflector --verbose --country France --latest 10 --sort rate --save /etc/pacman.d/mirrorlist`
 9. Bootstrap the system: `pacstrap /mnt base base-devel linux linux-firmware vim man-db man-pages networkmanager dhclient dnsmasq zsh git`
 10. Generate the `fstab` file: `genfstab -U /mnt >> /mnt/etc/fstab`, add `,lazytime` after `relatime` to avoid writing access time everytime a file is read (but wait for a write to happen to bundle it with it) while still keeping access times (some applications need it)
 11. Chroot into the new system: `arch-chroot /mnt`
@@ -31,7 +31,7 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 ```
 127.0.0.1 localhost
 ::1   localhost
-127.0.1.1 myhostname.localdomain  myhostname
+127.0.0.1 myhostname.localdomain  myhostname
 ```
 18. Set the root password (make sure you have the correct keyboard layout!): `passwd`
 19. Install `systemd-boot`: make sure the ESP is mounted on `/boot` and run `bootctl --path=/boot install`
@@ -47,8 +47,8 @@ Description = Updating systemd-boot...
 When = PostTransaction
 Exec = /usr/bin/bootctl update
 ```
-21. Install CPU microcode: `pacman -Sy && pacman -S amd-ucode`
-22. Create a new boot entry which combines Linux and the microcode: `/boot/loader/entries/arch.conf`
+1.  Install CPU microcode: `pacman -Sy amd-ucode`
+2.  Create a new boot entry which combines Linux and the microcode (to insert the UUID in the vim file, run `:r!blkid -o value /dev/<whatever> | head -n1`): `/boot/loader/entries/arch.conf`
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
@@ -58,6 +58,7 @@ options root=UUID=<UUID of the / partition> rw
 ```
 23. Configure systemd-boot: `/boot/loader/loader.conf`
 ```
+timeout 3
 default arch
 ```
 24. Setup the network for DHCP: `/etc/NetworkManager/conf.d/dhcp-client.conf`
@@ -93,15 +94,15 @@ cd yay
 makepkg -sic
 ```
 4. Enable `multilib` repo by uncommenting its lines in `/etc/pacman.conf` then run `sudo pacman -Syu`
-5. Install `xorg mesa amdvlk clang llvm-libs vulkan-mesa-layer vulkan-radeon xf86-video-amdgpu lib32-mesa lib32-vulkan-radeon` (see <https://wiki.archlinux.org/index.php/Navi_10>) with `yay` (because `amdvlk` comes from the AUR, choose `amdvlk` when it asks which package to install if you are ready to wait for the compilation, or `amdvlk-bin` if you're not ^^)
-6. Load drivers early in the boot process: edit `/etc/mkinitcpio.conf` to add `MODULES=(amdgpu)` then regenerate the initramfs: `sudo mkinitcpio -p linux`
-7. Enable FreeSync: create `/etc/X11/xorg.conf.d/10-freesync.conf` with the following content:
+5. Install `xorg mesa amdvlk vulkan-radeon xf86-video-amdgpu lib32-mesa lib32-vulkan-radeon`
+6. Enable FreeSync: create `/etc/X11/xorg.conf.d/10-freesync.conf` with the following content:
 ```
 Section "Device"
         Identifier "Card0"
         Option "VariableRefresh" "true"
 EndSection
 ```
+7. Set Xorg keymap: `localectl set-x11-keymap fr`
 8. Install `numlockx`
 9. Install `i3` and choose `i3-gaps` over `i3-wm`
 10. Install a terminal, eg. `alacritty` (with `alacritty-terminfo`)
