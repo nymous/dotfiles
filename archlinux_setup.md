@@ -95,7 +95,8 @@ makepkg -sic
 ```
 4. Enable `multilib` repo by uncommenting its lines in `/etc/pacman.conf` then run `sudo pacman -Syu`
 5. Install `xorg mesa amdvlk vulkan-radeon xf86-video-amdgpu lib32-mesa lib32-vulkan-radeon`
-6. Enable FreeSync: create `/etc/X11/xorg.conf.d/10-freesync.conf` with the following content:
+6. Load drivers early in the boot process: edit `/etc/mkinitcpio.conf` to add `MODULES=(amdgpu)` then regenerate the initramfs: `sudo mkinitcpio -p linux`
+7. Enable FreeSync: create `/etc/X11/xorg.conf.d/10-freesync.conf` with the following content:
 ```
 Section "Device"
         Identifier "Card0"
