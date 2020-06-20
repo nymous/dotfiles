@@ -1,0 +1,54 @@
+{
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.renderWhitespace": "boundary",
+    "editor.lineHeight": 22,
+    "editor.rulers": [
+        80
+    ],
+    "editor.tabSize": 2,
+    "editor.minimap.showSlider": "always",
+    "editor.cursorBlinking": "smooth",
+    "editor.fontLigatures": true,
+    "editor.dragAndDrop": false,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "php.suggest.basic": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": false
+    },
+    "window.zoomLevel": 0,
+    "emmet.includeLanguages": {
+        "edge": "html"
+    },
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "breadcrumbs.enabled": true,
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.levels": "2..6",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "files.insertFinalNewline": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "shellcheck.customArgs": [
+        "-x"
+    ],
+    "python.formatting.provider": "black",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

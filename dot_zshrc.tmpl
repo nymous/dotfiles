@@ -1,0 +1,229 @@
+# To debug slow ZSH startup time, uncomment following line along with the last line of this file
+# #zmodload zsh/zprof
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000000000
+SAVEHIST=1000000000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/nymous/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+#########################
+# Setup basic variables #
+#########################
+DEFAULT_USER="nymous"
+export EDITOR="vim"
+
+####################################
+# Setup ZSH plugins before loading #
+####################################
+zstyle :omz:plugins:ssh-agent identities id_ed25519
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+
+# Disable oh-my-zsh autoupdate
+DISABLE_AUTO_UPDATE=true
+DISABLE_UPDATE_PROMPT=true
+
+####################
+# Load ZSH plugins #
+####################
+autoload -Uz is-at-least compaudit
+ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+ZSH_CACHE_DIR="${ZSH}/cache"
+ZSH_THEME=
+source ~/.antibody.sh
+
+#######################
+# Lazy load dev tools #
+#######################
+export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+rbenv() {
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+pyenv() {
+  eval "$(command pyenv init -)"
+  pyenv "$@"
+}
+
+#########################
+# Add dev tools to PATH #
+#########################
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+############################
+# Add custom tools to PATH #
+############################
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/home/nymous/go/bin
+
+#################################
+# Load command-not-found plugin #
+#################################
+# It requires https://wiki.archlinux.org/index.php/Pkgfile to be installed and automatically updated
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+#########################
+# Aliases and functions #
+#########################
+alias x=startx
+alias cat=vimcat
+
+{{- if eq .chezmoi.hostname "architect" }}
+alias adeo="xrandr --output HDMI-1-1 --right-of eDP-1-1 && ssh-add ~/.ssh/id_ed25519_adeo"
+alias ultrawide="/home/nymous/.screenlayout/ultrawide.sh"
+
+alias battery="cat /sys/class/power_supply/BAT1/capacity"
+{{- end }}
+
+### git
+alias gc="git commit"
+alias gm="git merge --no-ff"
+alias gl="git pull --ff-only"
+alias gfl="git flow"
+alias gfp="git fetch --prune"
+alias gpfl="git push --force-with-lease"
+
+alias pacclean="sudo paccache -r"
+alias pping="prettyping --nolegend"
+
+### ls
+alias ls="lsd"
+alias l="ls -lF"
+alias la="ls -laF"
+
+### python
+alias activate="source ./.venv/bin/activate"
+
+function cdtmp() {
+  cd $(mktemp -d)
+}
+
+alias blue="sudo systemctl start bluetooth"
+# https://wiki.archlinux.org/index.php/Bluetooth_headset & https://github.com/khvzak/bluez-tools/issues/13
+function btc {
+  local BT_DEV=48:44:F7:F6:27:E6
+  <<<"agent on
+    trust $BT_DEV
+    pair $BT_DEV
+    connect $BT_DEV
+    quit" bluetoothctl
+}
+
+function wpa2_entreprise {
+  read -r 'ssid?SSID: '
+  read -r 'identity?Username: '
+  read -r 'anonymous?Anonymous identity: '
+  read -rs 'password?Password: '
+  echo ''
+  nmcli con add type wifi con-name "$ssid" ifname wlp8s0 ssid "$ssid" wifi-sec.key-mgmt wpa-psk 802-1x.identity "$identity" 802-1x.anonymous-identity "$anonymous" 802-1x.password "$password" 802-1x.eap peap 802-1x.phase2-auth mschapv2
+}
+
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+function fixlayout() {
+  setxkbmap -device $(xinput list | grep "Virtual core XTEST keyboard" | sed -e 's/.\+=\([0-9]\+\).\+/\1/') fr
+}
+
+function notif() {
+  case "$1" in
+    "on")
+      pkill -SIGUSR2 dunst
+      ;;
+    "off")
+      pkill -SIGUSR1 dunst
+      ;;
+    *)
+      echo "Use notif <on|off> to enable or disable dunst"
+      ;;
+  esac
+}
+
+function ap() {
+  case "$1" in
+    "up")
+      sudo systemctl start create_ap
+      ;;
+    "down")
+      sudo systemctl stop create_ap
+      ;;
+    *)
+      echo "Use  ap <up|down> to start or stop Wifi sharing"
+      ;;
+  esac
+}
+
+### systemctl
+alias sstart="sudo systemctl start"
+alias sstop="sudo systemctl stop"
+alias sstatus="systemctl status"
+
+### Magic expand
+# See https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+globalias() {
+  if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+    zle _expand_alias
+    zle expand-word
+  fi
+  zle self-insert
+}
+
+zle -N globalias
+bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
+
+#######################################
+# Reload completions added by plugins #
+#######################################
+compinit
+
+############################
+# Activate powerline theme #
+############################
+{{- if eq .chezmoi.hostname "architect" }}
+prompt() {
+	PS1="$(powerline-rs --modules ssh,virtualenv,cwd,perms,git,gitstage,root --newline --shell zsh $?)"
+}
+precmd_functions+=(prompt)
+
+{{- else }}
+function powerline_precmd() {
+    PS1="$(powerline-go -error $? -shell zsh -modules venv,node,ssh,cwd,perms,git,jobs,root)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
+{{- end }}
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/vault vault
+
+#zprof

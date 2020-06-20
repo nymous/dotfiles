@@ -1,0 +1,39 @@
+# Run
+# antibody bundle < ~/.antibodyrc > ~/.antibody.sh
+# everytime a plugin is added!
+
+robbyrussell/oh-my-zsh
+
+robbyrussell/oh-my-zsh path:plugins/archlinux
+robbyrussell/oh-my-zsh path:plugins/common-aliases
+
+robbyrussell/oh-my-zsh path:plugins/fasd
+robbyrussell/oh-my-zsh path:plugins/bgnotify
+robbyrussell/oh-my-zsh path:plugins/ssh-agent
+robbyrussell/oh-my-zsh path:plugins/pass
+
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/git-extras
+
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
+
+lukechilds/zsh-better-npm-completion
+lukechilds/zsh-nvm
+robbyrussell/oh-my-zsh path:plugins/pip
+robbyrussell/oh-my-zsh path:plugins/pyenv
+
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+
+robbyrussell/oh-my-zsh path:plugins/sublime
+
+mafredri/zsh-async
+
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+djui/alias-tips
+
+# syntax highlighting has to be loaded last, so that it can understand syntax
+# created by other plugins
+zsh-users/zsh-syntax-highlighting
+

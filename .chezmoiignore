@@ -1,3 +1,10 @@
 README.md
 archlinux_setup.md
+firefox.md
+vscode.md
 .pre-commit-config.yaml
+
+# Stuff specific to laptop
+{{- if ne .chezmoi.hostname "architect" }}
+.config/i3/backlight.sh
+{{- end }}

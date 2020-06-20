@@ -103,6 +103,11 @@ Section "Device"
         Option "VariableRefresh" "true"
 EndSection
 ```
+7. Configure graphical session env variables: create `/etc/X11/Xsession.d/90-environment`
+```
+export XDG_CURRENT_DESKTOP="i3"
+export XDG_SESSION_DESKTOP="i3"
+```
 7. Set Xorg keymap: `localectl set-x11-keymap fr`
 8. Install `numlockx`
 9. Install `i3` and choose `i3-gaps` over `i3-wm`

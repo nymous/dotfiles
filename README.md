@@ -12,7 +12,9 @@ My personal dotfiles, with some instructions on how to setup an Archlinux instal
 
 ## Dotfiles
 
-Dotfiles are not managed for now, since my new install is pretty empty.
+Dotfiles are managed using [chezmoi][chezmoi].
+
+Run `chezmoi init git@github.com:nymous/dotfiles.git`, then `chezmoi diff` and `chezmoi apply -v` to configure the system.
 
 ## First install
 
@@ -23,4 +25,5 @@ Instructions for the Archlinux installation process are available in the [dedica
 I use [pre-commit][pre-commit] to automatically build a TOC in .md files.
 
 
+[chezmoi]: https://github.com/twpayne/chezmoi
 [pre-commit]: https://pre-commit.com/
