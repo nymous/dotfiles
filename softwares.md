@@ -16,6 +16,7 @@
 - `clipmenu`: clipboard manager
 - `code`: Visual Studio Code
 - `discord-canary`: Discord Canary (doh)
+- `dunst`: to show notifications
 - `efibootmgr`: to choose which OS to boot next (`sudo efibootmgr -n 0000` to set (n)ext boot to the first entry)
 - `fasd`: to jump to frequently used folders with `z` (use with the `fasd` ZSH plugin)
 - `feh`: image viewer and used to set the background with Variety
@@ -32,6 +33,7 @@
 - `nerdsfont-complete`: huuuuge package that adds many fonts with symbols and emojis and stuff
 - `noto-fonts-emoji`: emoji is ❤️
 - `numlockx`: to automatically activate NumLock when booting
+- `nvm`: to install multiple Node versions
 - `pass`: Passwordstore, a password manager that uses git and gpg
 - `pavucontrol`: control audio I/O using PulseAudio
 - `picom`: a compositor for X11, to have transparency
@@ -47,12 +49,14 @@
 - `s-tui`: a TUI to show CPU temperature and usage, with included stresstest
 - `safeeyes`: reminds you to look away and do eyes exercices regularly (when you stay in front of your screen for 13 hours a day...)
 - `shellcheck-bin`: a linter for Shell scripts; use the `-bin` version to avoid reinstalling everytime a Haskell dependency is updated
+- `starship-bin`: a fast and customizable prompt, written in Rust
 - `sublime-text`: a fast text editor; you need to add their Archlinux repository first
 - `thunar`: graphical file manager
 - `ttf-fira-code`: a font with ligatures 😍
 - `variety`: automatically set and change your wallpapers from many sources (local, Reddit, RSS...)
 - `xclip`: stop doing `cat .ssh/id_rsa` and copy-pasting manually, start `xclip -selection clipboard < ~/.ssh/id_ed25519`! (it sends stuff to your clipboard from the CLI)
 - `xdg-user-dirs{,-gtk}`: create well-known directories such as Desktop, Documents and Music
+- `yarn`: a Node package manager
 - `yay`: an AUR helper
 - `ytop`: TUI system monitoring
 - `zathura{,-pdf-poppler}`: a PDF viewer
