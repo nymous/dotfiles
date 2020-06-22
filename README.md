@@ -6,6 +6,7 @@ My personal dotfiles, with some instructions on how to setup an Archlinux instal
 
 - [Dotfiles](#dotfiles)
 - [First install](#first-install)
+- [Useful softwares and extensions](#useful-softwares-and-extensions)
 - [Development](#development)
 
 <!-- tocstop -->
@@ -19,6 +20,12 @@ Run `chezmoi init git@github.com:nymous/dotfiles.git`, then `chezmoi diff` and `
 ## First install
 
 Instructions for the Archlinux installation process are available in the [dedicated file](./archlinux_setup.md).
+
+## Useful softwares and extensions
+
+- [Softwares](./softwares.md)
+- [Firefox](./firefox.md)
+- [Visual Studio Code](./vscode.md)
 
 ## Development
 
