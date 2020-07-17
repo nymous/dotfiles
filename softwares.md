@@ -12,7 +12,8 @@
 - `alacritty`: terminal
 - `antibody`: ZSH plugin manager
 - `bat`: cat but with color
-- `bluez{,-utils}`: required to have a working Bluetooth
+- `blueman`: a GUI to manage Bluetooth devices
+- `bluez{,-utils}`: required to have a working Bluetooth; don't forget to add `pulseaudio-bluetooth`!
 - `chezmoi`: dotfiles manager
 - `clipmenu`: clipboard manager
 - `code`: Visual Studio Code
