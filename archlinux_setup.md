@@ -125,3 +125,4 @@ exec i3
 16. Create your SSH key: `ssh-keygen -o -a 100 -t ed25519 -C "<user>@<hostname>"` (from <https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54>)
 17. Clone this repository: `git clone git@github.com:nymous/dotfiles.git`
 18. Install [twpayne/chezmoi](https://github.com/twpayne/chezmoi): `yay -Sy chezmoi`
+19. Run `chezmoi diff` to see what will be updated, then `chezmoi apply -v` to apply all dotfiles

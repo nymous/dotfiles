@@ -1,7 +1,4 @@
-README.md
-archlinux_setup.md
-firefox.md
-vscode.md
+*.md
 .pre-commit-config.yaml
 
 # Stuff specific to laptop

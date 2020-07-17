@@ -27,6 +27,7 @@
 - `gvfs-smb`: to mount Samba shares (like a NAS)
 - `i3-gaps`: tiling window manager patched to add gaps between windows
 - `i3lock-color`: lockscreen
+- `jetbrains-toolbox`: to download all Jetbrains IDEs and keep them updated
 - `lsd`: ls but with colors and icons
 - `mpv`: lightweight media player
 - `neofetch`: to brag about your system in screenshots on /r/unixporn
@@ -37,6 +38,7 @@
 - `pass`: Passwordstore, a password manager that uses git and gpg
 - `pavucontrol`: control audio I/O using PulseAudio
 - `picom`: a compositor for X11, to have transparency
+- `python-poetry`: an alternative and more modern Python dependency manager
 - `polybar`: a modular status bar
 - `pyenv`: to install multiple Python versions
 - `rbenv`: to install multiple Ruby versions
