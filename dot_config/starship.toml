@@ -1,0 +1,6 @@
+[directory]
+fish_style_pwd_dir_length = 1
+
+[memory_usage]
+disabled = false
+show_percentage = true

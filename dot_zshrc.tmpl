@@ -195,33 +195,10 @@ bindkey -M isearch " " magic-space # normal space during searches
 #######################################
 compinit
 
-############################
-# Activate powerline theme #
-############################
-{{- if eq .chezmoi.hostname "architect" }}
-prompt() {
-	PS1="$(powerline-rs --modules ssh,virtualenv,cwd,perms,git,gitstage,root --newline --shell zsh $?)"
-}
-precmd_functions+=(prompt)
-
-{{- else }}
-function powerline_precmd() {
-    PS1="$(powerline-go -error $? -shell zsh -modules venv,node,ssh,cwd,perms,git,jobs,root)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
-{{- end }}
+##################
+# Activate theme #
+##################
+eval "$(starship init zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
