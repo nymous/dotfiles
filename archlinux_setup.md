@@ -126,3 +126,4 @@ exec i3
 17. Clone this repository: `git clone git@github.com:nymous/dotfiles.git`
 18. Install [twpayne/chezmoi](https://github.com/twpayne/chezmoi): `yay -Sy chezmoi`
 19. Run `chezmoi diff` to see what will be updated, then `chezmoi apply -v` to apply all dotfiles
+20. For `pass` you need to copy your key in the `gitolite-admin` repo, give it the correct rights then clone the pass repo. You then need to import the GPG key using `gpg --import key.asc`.
