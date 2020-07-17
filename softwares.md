@@ -12,10 +12,13 @@
 - `alacritty`: terminal
 - `antibody`: ZSH plugin manager
 - `bat`: cat but with color
+- `bluez{,-utils}`: required to have a working Bluetooth
 - `chezmoi`: dotfiles manager
 - `clipmenu`: clipboard manager
 - `code`: Visual Studio Code
 - `discord-canary`: Discord Canary (doh)
+- `docker`: the de-facto container engine
+- `docker-compose`: use declarative configuration files to run containers instead of
 - `dunst`: to show notifications
 - `efibootmgr`: to choose which OS to boot next (`sudo efibootmgr -n 0000` to set (n)ext boot to the first entry)
 - `fasd`: to jump to frequently used folders with `z` (use with the `fasd` ZSH plugin)
