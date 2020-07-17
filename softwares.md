@@ -54,8 +54,10 @@
 - `starship-bin`: a fast and customizable prompt, written in Rust
 - `sublime-text`: a fast text editor; you need to add their Archlinux repository first
 - `thunar`: graphical file manager
+- `tldr`: simple and to-the-point examples for many commands
 - `ttf-fira-code`: a font with ligatures 😍
 - `variety`: automatically set and change your wallpapers from many sources (local, Reddit, RSS...)
+- `vimpager`: gives you `vimcat`, a cat that uses vim syntax highlighting
 - `xclip`: stop doing `cat .ssh/id_rsa` and copy-pasting manually, start `xclip -selection clipboard < ~/.ssh/id_ed25519`! (it sends stuff to your clipboard from the CLI)
 - `xdg-user-dirs{,-gtk}`: create well-known directories such as Desktop, Documents and Music
 - `yarn`: a Node package manager

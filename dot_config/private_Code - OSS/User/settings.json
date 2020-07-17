@@ -31,7 +31,6 @@
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "breadcrumbs.enabled": true,
-    "markdown.extension.toc.githubCompatibility": true,
     "markdown.extension.toc.levels": "2..6",
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "files.insertFinalNewline": true,
