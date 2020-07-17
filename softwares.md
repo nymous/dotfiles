@@ -56,6 +56,7 @@
 - `safeeyes`: reminds you to look away and do eyes exercices regularly (when you stay in front of your screen for 13 hours a day...)
 - `shellcheck-bin`: a linter for Shell scripts; use the `-bin` version to avoid reinstalling everytime a Haskell dependency is updated
 - `starship-bin`: a fast and customizable prompt, written in Rust
+- `streamlink{,-twitch-gui}`: a CLI tool to play Twitch streams in a native player (mpv or VLC), and its accompanying GUI
 - `sublime-text`: a fast text editor; you need to add their Archlinux repository first
 - `thunar`: graphical file manager
 - `tldr`: simple and to-the-point examples for many commands
@@ -66,6 +67,7 @@
 - `xdg-user-dirs{,-gtk}`: create well-known directories such as Desktop, Documents and Music
 - `yarn`: a Node package manager
 - `yay`: an AUR helper
+- `youtube-dl`: to download videos from Youtube and so many more!
 - `ytop`: TUI system monitoring
 - `zathura{,-pdf-poppler}`: a PDF viewer
 - `zsh`: a good shell
