@@ -64,6 +64,7 @@
 - `variety`: automatically set and change your wallpapers from many sources (local, Reddit, RSS...)
 - `vimpager`: gives you `vimcat`, a cat that uses vim syntax highlighting
 - `virtualbox`: a simple to use hypervisor (install `virtualbox-host-modules-arch` if you use the standard kernel, and `virtualbox-guest-iso` to improve performance in guests)
+- `vlc`: the play-it-all media player
 - `xclip`: stop doing `cat .ssh/id_rsa` and copy-pasting manually, start `xclip -selection clipboard < ~/.ssh/id_ed25519`! (it sends stuff to your clipboard from the CLI)
 - `xdg-user-dirs{,-gtk}`: create well-known directories such as Desktop, Documents and Music
 - `yarn`: a Node package manager
