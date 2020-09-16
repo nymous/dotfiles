@@ -19,7 +19,7 @@
 - `code`: Visual Studio Code
 - `discord-canary`: Discord Canary (doh)
 - `docker`: the de-facto container engine
-- `docker-compose`: use declarative configuration files to run containers instead of
+- `docker-compose`: use declarative configuration files to run containers instead of remembering all `docker run` flags ^^
 - `dunst`: to show notifications
 - `efibootmgr`: to choose which OS to boot next (`sudo efibootmgr -n 0000` to set (n)ext boot to the first entry)
 - `fasd`: to jump to frequently used folders with `z` (use with the `fasd` ZSH plugin)
@@ -33,6 +33,7 @@
 - `i3lock-color`: lockscreen
 - `jetbrains-toolbox`: to download all Jetbrains IDEs and keep them updated
 - `lsd`: ls but with colors and icons
+- `mkcert`: very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
 - `mpv`: lightweight media player
 - `neofetch`: to brag about your system in screenshots on /r/unixporn
 - `nerdsfont-complete`: huuuuge package that adds many fonts with symbols and emojis and stuff
