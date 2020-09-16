@@ -114,7 +114,7 @@ function cdtmp() {
   cd $(mktemp -d)
 }
 
-alias blue="sudo systemctl start bluetooth"
+alias blue="sudo systemctl start bluetooth && sudo rfkill unblock bluetooth"
 # https://wiki.archlinux.org/index.php/Bluetooth_headset & https://github.com/khvzak/bluez-tools/issues/13
 function btc {
   local BT_DEV=48:44:F7:F6:27:E6

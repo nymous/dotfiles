@@ -8,3 +8,5 @@
 [includeIf "gitdir:~/Documents/Adeo/"]
 	path = ~/Documents/Adeo/gitconfig_include
 
+[pull]
+	ff = only
