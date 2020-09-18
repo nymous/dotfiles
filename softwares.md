@@ -40,11 +40,13 @@
 - `noto-fonts-emoji`: emoji is ❤️
 - `numlockx`: to automatically activate NumLock when booting
 - `nvm`: to install multiple Node versions
+- `obs-studio`: if you want to stream or record videos
 - `pass`: Passwordstore, a password manager that uses git and gpg
 - `pavucontrol`: control audio I/O using PulseAudio
 - `picom`: a compositor for X11, to have transparency
 - `python-poetry`: an alternative and more modern Python dependency manager
 - `polybar`: a modular status bar
+- `pulseeffects`: lets you apply many filters on your sound input and output
 - `pyenv`: to install multiple Python versions
 - `rbenv`: to install multiple Ruby versions
 - `redshift`: change the screen temperature to avoid burning your eyes at night
