@@ -14,6 +14,7 @@
 - `bat`: cat but with color
 - `blueman`: a GUI to manage Bluetooth devices
 - `bluez{,-utils}`: required to have a working Bluetooth; don't forget to add `pulseaudio-bluetooth`!
+- `chatty`: a Twitch chat client
 - `chezmoi`: dotfiles manager
 - `clipmenu`: clipboard manager
 - `code`: Visual Studio Code
