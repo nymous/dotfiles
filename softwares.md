@@ -61,9 +61,11 @@
 - `s-tui`: a TUI to show CPU temperature and usage, with included stresstest
 - `safeeyes`: reminds you to look away and do eyes exercices regularly (when you stay in front of your screen for 13 hours a day...)
 - `shellcheck-bin`: a linter for Shell scripts; use the `-bin` version to avoid reinstalling everytime a Haskell dependency is updated
+- `sccache`: used to accelerate Rust compilation, don't forget to configure Cargo to use it afterwards (see [Rust Arch wiki](https://wiki.archlinux.org/index.php/Rust#sccache))
 - `starship-bin`: a fast and customizable prompt, written in Rust
 - `streamlink{,-twitch-gui}`: a CLI tool to play Twitch streams in a native player (mpv or VLC), and its accompanying GUI
 - `sublime-text`: a fast text editor; you need to add their Archlinux repository first
+- `tectonic`: a no-fuss, very fast TeX/LaTeX compiler written in Rust
 - `thunar`: graphical file manager
 - `tldr`: simple and to-the-point examples for many commands
 - `ttf-fira-code`: a font with ligatures 😍
