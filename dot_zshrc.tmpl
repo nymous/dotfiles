@@ -176,6 +176,10 @@ function pa-virtual-output() {
   pacmd load-module module-combine-sink sink_name=CombineVirtualHeadphones slaves=VirtualSink,alsa_output.pci-0000_0e_00.4.analog-stereo
 }
 
+function lofi() {
+  mpv --no-vid --no-audio-display 'https://www.youtube.com/watch?v=5qap5aO4i9A'
+}
+
 ### systemctl
 alias sstart="sudo systemctl start"
 alias sstop="sudo systemctl stop"
