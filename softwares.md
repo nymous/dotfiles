@@ -33,6 +33,7 @@
 - `i3-gaps`: tiling window manager patched to add gaps between windows
 - `i3lock-color`: lockscreen
 - `jetbrains-toolbox`: to download all Jetbrains IDEs and keep them updated
+- `libre-office-fresh`: an office software suite
 - `lsd`: ls but with colors and icons
 - `mkcert`: very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
 - `mpv`: lightweight media player
@@ -53,6 +54,7 @@
 - `redshift`: change the screen temperature to avoid burning your eyes at night
 - `reflector`: test Archlinux packages mirrors and find the fastest ones
 - `rofi`: a general purpose app launcher and dmenu replacer
+- `rofimoji`: to select your emoji using Rofi
 - `rofi-pass`: a pass frontend that uses Rofi
 - `ruby-build`: required for rbenv to install new Ruby versions
 - `rustup`: to install the Rust compiler (and multiple versions if required)
