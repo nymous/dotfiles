@@ -18,6 +18,7 @@
 - `chezmoi`: dotfiles manager
 - `clipmenu`: clipboard manager
 - `code`: Visual Studio Code
+- `devd`: a local webserver for developers, with live-reload. Sister project to `modd`, see below.
 - `discord-canary`: Discord Canary (doh)
 - `docker`: the de-facto container engine
 - `docker-compose`: use declarative configuration files to run containers instead of remembering all `docker run` flags ^^
@@ -36,6 +37,7 @@
 - `libre-office-fresh`: an office software suite
 - `lsd`: ls but with colors and icons
 - `mkcert`: very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
+- `modd`: Watch files and respond to changes
 - `mpv`: lightweight media player
 - `neofetch`: to brag about your system in screenshots on /r/unixporn
 - `nerdsfont-complete`: huuuuge package that adds many fonts with symbols and emojis and stuff
