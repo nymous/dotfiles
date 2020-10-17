@@ -45,6 +45,7 @@
 - `numlockx`: to automatically activate NumLock when booting
 - `nvm`: to install multiple Node versions
 - `obs-studio`: if you want to stream or record videos
+- [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB): to control every RGB peripheral in your system (red makes your computer go faster, it's just science); don't forget to load the `i2c-*` kernel modules and the `udev` rules
 - `pass`: Passwordstore, a password manager that uses git and gpg
 - `pavucontrol`: control audio I/O using PulseAudio
 - `picom`: a compositor for X11, to have transparency
