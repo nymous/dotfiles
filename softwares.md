@@ -71,6 +71,7 @@
 - `tectonic`: a no-fuss, very fast TeX/LaTeX compiler written in Rust
 - `thunar`: graphical file manager
 - `tldr`: simple and to-the-point examples for many commands
+- `trickle`: utility to limit bandwidth (download and upload) used by a process
 - `ttf-fira-code`: a font with ligatures 😍
 - `variety`: automatically set and change your wallpapers from many sources (local, Reddit, RSS...)
 - `vimpager`: gives you `vimcat`, a cat that uses vim syntax highlighting
