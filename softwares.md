@@ -33,6 +33,7 @@
 - `gvfs-smb`: to mount Samba shares (like a NAS)
 - `i3-gaps`: tiling window manager patched to add gaps between windows
 - `i3lock-color`: lockscreen
+- `inxi`: a CLI system information tool, useful when asking for help on forums, just paste the full output
 - `jetbrains-toolbox`: to download all Jetbrains IDEs and keep them updated
 - `libre-office-fresh`: an office software suite
 - `lsd`: ls but with colors and icons
