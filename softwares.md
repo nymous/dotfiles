@@ -50,6 +50,7 @@
 - [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB): to control every RGB peripheral in your system (red makes your computer go faster, it's just science); don't forget to load the `i2c-*` kernel modules and the `udev` rules
 - `pass`: Passwordstore, a password manager that uses git and gpg
 - `pavucontrol`: control audio I/O using PulseAudio
+- `peek`: a simple screen recorder that produces tiny video files (in MP4, GIF or WebM format)
 - `picom`: a compositor for X11, to have transparency
 - `python-poetry`: an alternative and more modern Python dependency manager
 - `polybar`: a modular status bar
