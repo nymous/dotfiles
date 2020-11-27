@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+import json
+
+conf_path = "/usr/lib/code/product.json"
+
+with open(conf_path, "r") as f:
+    conf = json.load(f)
+    conf["extensionsGallery"] = {
+        "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+        "itemUrl": "https://marketplace.visualstudio.com/items"
+    }
+    extensions = set(conf["extensionAllowedProposedApi"])
+    extensions.add("ms-vsliveshare.vsliveshare")
+    extensions.add("ms-vscode-remote.vscode-remote-extensionpack")
+    extensions.add("ms-vscode-remote.remote-wsl")
+
+    conf["extensionAllowedProposedApi"] = list(extensions)
+
+with open(conf_path, "w") as f:
+    json.dump(conf, f, indent=4)
+
