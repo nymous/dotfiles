@@ -87,6 +87,7 @@
 - `youtube-dl`: to download videos from Youtube and so many more!
 - `ytop`: TUI system monitoring
 - `zathura{,-pdf-poppler}`: a PDF viewer
+- `zeal`: keep your dev docs available offline on your computer
 - `zsh`: a good shell
 
 ## How to generate
