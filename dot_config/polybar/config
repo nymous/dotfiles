@@ -65,8 +65,8 @@ tray-background = ${colors.background}
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 [bar/firstscreen]
 monitor = ${env:MONITOR:HDMI-1-1}
@@ -101,8 +101,8 @@ tray-position = right
 tray-padding = 2
 tray-background = ${colors.background}
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 [bar/secondscreen]
 monitor = ${env:MONITOR:eDP-1-1}
@@ -133,8 +133,8 @@ modules-left = i3
 modules-center = xwindow
 modules-right = pavolume cpu temperature battery date
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 [module/xwindow]
 type = internal/xwindow
