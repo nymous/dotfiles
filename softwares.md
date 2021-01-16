@@ -38,6 +38,7 @@
 - `jetbrains-toolbox`: to download all Jetbrains IDEs and keep them updated
 - `libre-office-fresh`: an office software suite
 - `lsd`: ls but with colors and icons
+- `lxsession`: a lightweight Polkit agent, don't forget to autostart it with your graphical session
 - `mkcert`: very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
 - `modd`: Watch files and respond to changes
 - `mpv`: lightweight media player

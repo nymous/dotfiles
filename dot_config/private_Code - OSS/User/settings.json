@@ -49,5 +49,7 @@
     "python.formatting.provider": "black",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "python.experiments.enabled": false,
+    "python.linting.mypyEnabled": true
 }
