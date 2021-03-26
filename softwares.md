@@ -26,6 +26,7 @@
 - `efibootmgr`: to choose which OS to boot next (`sudo efibootmgr -n 0000` to set (n)ext boot to the first entry)
 - `fasd`: to jump to frequently used folders with `z` (use with the `fasd` ZSH plugin)
 - `feh`: image viewer and used to set the background with Variety
+- `file-roller`: to view, create and extract archives (with `thunar-archive-plugin` to create from Thunar)
 - `firefox-nightly`: Firefox Nightly (gotta live on the edge!)
 - `git`: version control
 - `glances`: htop on steroids
@@ -77,6 +78,7 @@
 - `tldr`: simple and to-the-point examples for many commands
 - `trickle`: utility to limit bandwidth (download and upload) used by a process
 - `ttf-fira-code`: a font with ligatures 😍
+- `tumbler`: to see thumbails in Thunar (and `ffmpegthumbnailer` for videos)
 - `variety`: automatically set and change your wallpapers from many sources (local, Reddit, RSS...)
 - `vimpager`: gives you `vimcat`, a cat that uses vim syntax highlighting
 - `virtualbox`: a simple to use hypervisor (install `virtualbox-host-modules-arch` if you use the standard kernel, and `virtualbox-guest-iso` to improve performance in guests)
