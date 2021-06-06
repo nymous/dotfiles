@@ -19,7 +19,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -28,6 +28,7 @@
 	],
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
+	"caret_style": "smooth",
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
@@ -38,5 +39,5 @@
 	"show_line_endings": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
 }

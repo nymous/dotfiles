@@ -17,14 +17,13 @@
     "files.trimFinalNewlines": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "javascript.implicitProjectConfig.checkJs": true,
+    "js/ts.implicitProjectConfig.checkJs": true,
     "php.suggest.basic": false,
     "editor.quickSuggestions": {
         "other": true,
         "comments": true,
-        "strings": false
+        "strings": true
     },
-    "window.zoomLevel": 0,
     "emmet.includeLanguages": {
         "edge": "html"
     },
@@ -34,22 +33,36 @@
     "markdown.extension.toc.levels": "2..6",
     "workbench.iconTheme": "eq-material-theme-icons-darker",
     "files.insertFinalNewline": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "shellcheck.customArgs": [
+        "-x"
+    ],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "[html]": {
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[svelte]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "shellcheck.customArgs": [
-        "-x"
-    ],
-    "python.formatting.provider": "black",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "python.formatting.provider": "black",
     "python.experiments.enabled": false,
-    "python.linting.mypyEnabled": true
+    "python.linting.mypyEnabled": true,
+    "window.zoomLevel": 1
 }

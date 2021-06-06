@@ -7,15 +7,17 @@ with open(conf_path, "r") as f:
     conf = json.load(f)
     conf["extensionsGallery"] = {
         "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-        "itemUrl": "https://marketplace.visualstudio.com/items"
+        "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+        "itemUrl": "https://marketplace.visualstudio.com/items",
     }
     extensions = set(conf["extensionAllowedProposedApi"])
     extensions.add("ms-vsliveshare.vsliveshare")
     extensions.add("ms-vscode-remote.vscode-remote-extensionpack")
     extensions.add("ms-vscode-remote.remote-wsl")
+    extensions.add("ms-python.python")
+    extensions.add("ms-toolsai.jupyter")
 
     conf["extensionAllowedProposedApi"] = list(extensions)
 
 with open(conf_path, "w") as f:
     json.dump(conf, f, indent=4)
-

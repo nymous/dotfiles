@@ -21,7 +21,6 @@ robbyrussell/oh-my-zsh path:plugins/docker-compose
 lukechilds/zsh-better-npm-completion
 lukechilds/zsh-nvm
 robbyrussell/oh-my-zsh path:plugins/pip
-robbyrussell/oh-my-zsh path:plugins/pyenv
 
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
 
@@ -36,4 +35,3 @@ djui/alias-tips
 # syntax highlighting has to be loaded last, so that it can understand syntax
 # created by other plugins
 zsh-users/zsh-syntax-highlighting
-
