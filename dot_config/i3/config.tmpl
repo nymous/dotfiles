@@ -214,7 +214,7 @@ bindsym --release $win+Print exec --no-startup-id "maim -i $(xdotool getactivewi
 
 # Power management & lock screen
 # Uses https://github.com/PandorasFox/i3lock-color
-set $Locker "i3lock --blur 5 --clock --show-failed-attempts --pass-media-keys --ignore-empty-password --timecolor ffffffff --datecolor ddddddff --veriftext Verifying... --wrongtext Nope! && xset dpms force off && sleep 1"
+set $Locker "i3lock --blur 5 --clock --show-failed-attempts --pass-media-keys --ignore-empty-password --time-color ffffffff --date-color ddddddff --verif-text Verifying... --wrong-text Nope! && xset dpms force off && sleep 1"
 bindsym $win+l exec $Locker
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
