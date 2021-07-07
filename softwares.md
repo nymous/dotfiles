@@ -31,6 +31,7 @@
 - `git`: version control
 - `glances`: htop on steroids
 - `gnome-calculator`: simple calculator
+- `gnome-keyring`: a freedesktop.org Secret Service (equivalent to macOS "Keychain" or Windows Credential Locker), which can be required by some applications (e.g. the Jetbrains Toolbox or VSCode to store their credentials); you can use `seahorse` for a GUI
 - `gvfs-smb`: to mount Samba shares (like a NAS)
 - `i3-gaps`: tiling window manager patched to add gaps between windows
 - `i3lock-color`: lockscreen
