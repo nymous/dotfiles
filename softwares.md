@@ -29,6 +29,7 @@
 - `file-roller`: to view, create and extract archives (with `thunar-archive-plugin` to create from Thunar)
 - `firefox-nightly`: Firefox Nightly (gotta live on the edge!)
 - `git`: version control
+- `git-delta`: a diff viewer for git (and more) with syntax highlighting
 - `glances`: htop on steroids
 - `gnome-calculator`: simple calculator
 - `gnome-keyring`: a freedesktop.org Secret Service (equivalent to macOS "Keychain" or Windows Credential Locker), which can be required by some applications (e.g. the Jetbrains Toolbox or VSCode to store their credentials); you can use `seahorse` for a GUI
