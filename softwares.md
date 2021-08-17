@@ -11,6 +11,7 @@
 
 - `alacritty`: terminal
 - `antibody`: ZSH plugin manager
+- `barrier`: a cross-platform KVM software, to share a single mouse and keyboard between multiple computers running on macOS, Windows, Linux and BSD!
 - `bat`: cat but with color
 - `blueman`: a GUI to manage Bluetooth devices
 - `bluez{,-utils}`: required to have a working Bluetooth; don't forget to add `pulseaudio-bluetooth`!

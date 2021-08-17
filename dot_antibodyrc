@@ -20,7 +20,6 @@ robbyrussell/oh-my-zsh path:plugins/docker-compose
 
 lukechilds/zsh-better-npm-completion
 lukechilds/zsh-nvm
-robbyrussell/oh-my-zsh path:plugins/pip
 
 robbyrussell/oh-my-zsh path:plugins/colored-man-pages
 

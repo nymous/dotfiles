@@ -37,12 +37,9 @@
     "shellcheck.customArgs": [
         "-x"
     ],
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -64,5 +61,10 @@
     "python.formatting.provider": "black",
     "python.experiments.enabled": false,
     "python.linting.mypyEnabled": true,
-    "window.zoomLevel": 1
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 1,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true
+    }
 }
