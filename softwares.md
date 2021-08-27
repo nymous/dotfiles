@@ -80,6 +80,7 @@
 - [`tectonic`](https://tectonic-typesetting.github.io/): a no-fuss, very fast TeX/LaTeX compiler written in Rust
 - `thunar`: graphical file manager
 - [`tldr`](https://tldr.sh/): simple and to-the-point examples for many commands
+- [`tokei`](https://github.com/XAMPPRocky/tokei): a tool to count lines of code in a project (like `cloc`)
 - `trickle`: utility to limit bandwidth (download and upload) used by a process
 - [`ttf-fira-code`](https://github.com/tonsky/FiraCode): a font with ligatures 😍
 - `tumbler`: to see thumbails in Thunar (and `ffmpegthumbnailer` for videos)
