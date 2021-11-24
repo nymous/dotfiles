@@ -78,7 +78,7 @@ dns=dnsmasq
 
 ## Post-installation
 
-1. Configure pacman for colored output: uncomment the `#Color` line in `/etc/pacman.conf`
+1. Configure pacman for colored output: uncomment the `#Color` line in `/etc/pacman.conf` (optional: add the `ILoveCandy` option for a pacman progress bar ^^)
 2. Configure `/etc/makepkg.conf` for:
    1. better make performance: change `MAKEFLAGS="-j2"` to `MAKEFLAGS="-j$(nproc)"`
    2. better compress performance: install `pigz` and `pbzip2` then edit the end of the file with the following
