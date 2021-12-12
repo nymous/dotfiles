@@ -42,6 +42,7 @@
 - [`inxi`](https://smxi.org/docs/inxi.htm): a CLI system information tool, useful when asking for help on forums, just paste the full output
 - [`jetbrains-toolbox`](https://www.jetbrains.com/toolbox-app/): to download all Jetbrains IDEs and keep them updated
 - [`libre-office-fresh`](https://www.libreoffice.org/): an office software suite
+- [`lnav`](https://lnav.org/): a local and simple logfile explorer
 - [`lsd`](https://github.com/Peltoche/lsd): ls but with colors and icons
 - `lxsession`: a lightweight Polkit agent, don't forget to autostart it with your graphical session
 - [`mkcert`](https://github.com/FiloSottile/mkcert): very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
