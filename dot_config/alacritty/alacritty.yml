@@ -3,6 +3,7 @@ window:
     x: 1
     y: 1
   decorations: none
+  opacity: 0.85
 
 scrolling:
   history: 100000
@@ -16,8 +17,6 @@ colors:
   primary:
     background: '0x002b36'
     foreground: '0xeaeaea'
-
-background_opacity: 0.85
 
 key_bindings:
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
