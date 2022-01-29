@@ -3,22 +3,22 @@
 	name = Thomas Gaudin
 [core]
 	editor = vim
+	pager = delta
+
 [alias]
 	it = !git init && git commit -m "root" --allow-empty
+
 [includeIf "gitdir:~/Documents/Adeo/"]
 	path = ~/Documents/Adeo/gitconfig_include
 
 [pull]
 	ff = only
 
+[merge]
+	conflicstyle = diff3
+
 [diff]
 	colorMoved = default
-
-[pager]
-	diff = delta
-	log = delta
-	reflog = delta
-	show = delta
 
 [interactive]
 	diffFilter = delta --color-only
@@ -26,6 +26,8 @@
 [delta]
 	features = line-numbers decorations
 	whitespace-error-style = 22 reverse
+	navigate = true
+	hyperlink = true
 
 [delta "decorations"]
 	commit-decoration-style = bold yellow box ul
