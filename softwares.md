@@ -15,8 +15,9 @@
 - [`bat`](https://github.com/sharkdp/bat): cat but with color
 - `blueman`: a GUI to manage Bluetooth devices
 - `bluez{,-utils}`: required to have a working Bluetooth; don't forget to add `pulseaudio-bluetooth`!
-- [bottom](https://github.com/ClementTsang/bottom): TUI system monitoring
+- [`bottom`](https://github.com/ClementTsang/bottom): TUI system monitoring
 - [`chatty`](https://chatty.github.io/): a Twitch chat client
+- [`check-broken-packages-pacman-hook-git`](https://github.com/desbma/pacman-hooks): check for packages with broken dynamic library dependencies, which can happen if an AUR package is not updated when its dependencies are
 - [`chezmoi`](https://www.chezmoi.io/): dotfiles manager
 - [`clipmenu`](https://github.com/cdown/clipmenu): clipboard manager
 - [`code`](https://code.visualstudio.com/): an open-source distribution of Visual Studio Code; see [the dedicated VSCode page](vscode.md) for my extensions, and to know the difference between this and a "true" Visual Studio Code
@@ -43,7 +44,7 @@
 - [`jetbrains-toolbox`](https://www.jetbrains.com/toolbox-app/): to download all Jetbrains IDEs and keep them updated
 - [`libre-office-fresh`](https://www.libreoffice.org/): an office software suite
 - [`lnav`](https://lnav.org/): a local and simple logfile explorer
-- [`lsd`](https://github.com/Peltoche/lsd): ls but with colors and icons
+- [`lsd`](https://github.com/Peltoche/lsd): ls but with colors and icons (alternative to try: [`exa`](https://github.com/ogham/exa)?)
 - `lxsession`: a lightweight Polkit agent, don't forget to autostart it with your graphical session
 - [`mkcert`](https://github.com/FiloSottile/mkcert): very useful to test your web services locally with a trusted TLS certificate (if it asks for 'Enter Password or Pin for "NSS Certificate DB"', it's asking for your Firefox master password)
 - [`modd`](https://github.com/cortesi/modd): Watch files and respond to changes
