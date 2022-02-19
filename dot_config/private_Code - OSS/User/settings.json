@@ -15,8 +15,7 @@
     "editor.dragAndDrop": false,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
+    "telemetry.telemetryLevel": "off",
     "js/ts.implicitProjectConfig.checkJs": true,
     "php.suggest.basic": false,
     "editor.quickSuggestions": {
@@ -66,5 +65,12 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/.mypy_cache": true
-    }
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.linting.banditEnabled": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "strict"
 }
