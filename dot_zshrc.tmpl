@@ -147,10 +147,10 @@ function fixlayout() {
 function notif() {
   case "$1" in
     "on")
-      pkill -SIGUSR2 dunst
+      dunstctl set-paused false
       ;;
     "off")
-      pkill -SIGUSR1 dunst
+      dunstctl set-paused true
       ;;
     *)
       echo "Use notif <on|off> to enable or disable dunst"
