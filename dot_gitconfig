@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	pager = delta
+	excludesfile = /home/nymous/.gitignore
 
 [alias]
 	it = !git init && git commit -m "root" --allow-empty
