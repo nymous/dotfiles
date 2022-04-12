@@ -10,6 +10,7 @@ with open(conf_path, "r") as f:
         "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
         "itemUrl": "https://marketplace.visualstudio.com/items",
     }
+    conf["nameLong"] = "Visual Studio Code"
     # extensions = set(conf["extensionAllowedProposedApi"])
     # extensions.add("ms-vsliveshare.vsliveshare")
     # extensions.add("ms-vscode-remote.vscode-remote-extensionpack")
