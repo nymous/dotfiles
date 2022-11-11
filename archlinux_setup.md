@@ -23,8 +23,12 @@ From <https://wiki.archlinux.org/index.php/Installation_guide>
 10. Generate the `fstab` file: `genfstab -U /mnt >> /mnt/etc/fstab`, add `,lazytime` after `relatime` to avoid writing access time everytime a file is read (but wait for a write to happen to bundle it with it) while still keeping access times (some applications need it)
 11. Chroot into the new system: `arch-chroot /mnt`
 12. Set the timezone: `ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime` and `hwclock --systohc`
-13. Generate locales: uncomment `en_US.UTF-8 UTF-8` from `/etc/locale.gen` and run `locale-gen`
-14. Create the `locale.conf` with the following content: `LANG=en_US.UTF-8`
+13. Generate locales: uncomment `en_US.UTF-8 UTF-8` and `en_DK.UTF-8 UTF-8` from `/etc/locale.gen` and run `locale-gen` (en_DK is used to have 24 hours clock and the YYYY-MM-DD date format)
+14. Create the `locale.conf` with the following content:
+```ini
+LANG=en_US.UTF-8
+LC_TIME=en_DK.UTF-8
+```
 15. Save the keymap: `vim /etc/vconsole.conf` with this content `KEYMAP=fr`
 16. Choose a hostname (most difficult part!) and save it in `/etc/hostname`
 17. Set it in `/etc/hosts` as well:
