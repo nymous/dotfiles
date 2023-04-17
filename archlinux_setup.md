@@ -112,7 +112,7 @@ EndSection
 export XDG_CURRENT_DESKTOP="i3"
 export XDG_SESSION_DESKTOP="i3"
 ```
-7. Set Xorg keymap: `localectl set-x11-keymap fr`
+7. Set Xorg keymap: `localectl set-x11-keymap fr pc105 oss compose:rctrl-altgr` (the `oss` variant gives you easy access to "œ", "æ" or "…" characters, and the `compose:rctrl-altgr` option enables the [compose key](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Configuring_compose_key) for any other character you would need)
 8. Install `numlockx`
 9. Install `i3` and choose `i3-gaps` over `i3-wm`
 10. Install a terminal, eg. `alacritty` (with `alacritty-terminfo`)
