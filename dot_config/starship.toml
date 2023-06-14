@@ -3,3 +3,7 @@ fish_style_pwd_dir_length = 1
 
 [memory_usage]
 disabled = false
+
+[gcloud]
+disabled = true
+

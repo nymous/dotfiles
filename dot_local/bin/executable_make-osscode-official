@@ -22,23 +22,77 @@ with open(conf_path, "r") as f:
 
     api_proposals = conf.get("extensionEnabledApiProposals", {})
     liveshare_api_proposals = set(api_proposals.get("ms-vsliveshare.vsliveshare", []))
-    liveshare_api_proposals.update({"contribMenuBarHome", "diffCommand", "documentFiltersExclusive", "fileSearchProvider", "findTextInFiles", "notebookCellExecutionState", "notebookContentProvider", "notebookDocumentEvents", "notebookEditor", "notebookEditorEdit", "notebookLiveShare", "terminalDimensions", "terminalDataWriteEvent", "textDocumentNotebook", "textSearchProvider"})
+    liveshare_api_proposals.update(
+        {
+            "contribMenuBarHome",
+            "diffCommand",
+            "documentFiltersExclusive",
+            "fileSearchProvider",
+            "findTextInFiles",
+            "notebookCellExecutionState",
+            "notebookContentProvider",
+            "notebookDocumentEvents",
+            "notebookEditor",
+            "notebookEditorEdit",
+            "notebookLiveShare",
+            "terminalDataWriteEvent",
+            "terminalDimensions",
+            "textDocumentNotebook",
+            "textSearchProvider",
+        }
+    )
     api_proposals["ms-vsliveshare.vsliveshare"] = list(liveshare_api_proposals)
 
     remote_wsl_api_proposals = set(api_proposals.get("ms-vscode-remote.remote-wsl", []))
-    remote_wsl_api_proposals.update({"resolvers", "contribViewsRemote", "telemetry"})
+    remote_wsl_api_proposals.update(
+        {
+            "contribViewsRemote",
+            "resolvers",
+            "telemetry",
+        }
+    )
     api_proposals["ms-vscode-remote.remote-wsl"] = list(remote_wsl_api_proposals)
 
     python_api_proposals = set(api_proposals.get("ms-python.python", []))
-    python_api_proposals.update({"quickPickSortByLabel", "testObserver", "notebookEditor"})
+    python_api_proposals.update(
+        {
+            "notebookEditor",
+            "quickPickSortByLabel",
+            "testObserver",
+        }
+    )
     api_proposals["ms-python.python"] = list(python_api_proposals)
 
     pylance_api_proposals = set(api_proposals.get("ms-python.vscode-pylance", []))
-    pylance_api_proposals.update({"notebookDocumentEvents", "notebookEditor", "notebookCellExecutionState"})
+    pylance_api_proposals.update(
+        {
+            "notebookCellExecutionState",
+            "notebookDocumentEvents",
+            "notebookEditor",
+        }
+    )
     api_proposals["ms-python.vscode-pylance"] = list(pylance_api_proposals)
 
     jupyter_api_proposals = set(api_proposals.get("ms-toolsai.jupyter", []))
-    jupyter_api_proposals.update({"notebookConcatTextDocument", "notebookControllerKind", "notebookDebugOptions", "notebookDeprecated", "notebookEditor", "notebookDocumentEvents", "notebookEditorDecorationType", "notebookEditorEdit", "notebookMessaging", "notebookMime", "notebookCellExecutionState", "portsAttributes", "textDocumentNotebook", "quickPickSortByLabel"})
+    jupyter_api_proposals.update(
+        {
+            "notebookCellExecutionState",
+            "notebookConcatTextDocument",
+            "notebookControllerKind",
+            "notebookDebugOptions",
+            "notebookDeprecated",
+            "notebookDocumentEvents",
+            "notebookEditor",
+            "notebookEditorDecorationType",
+            "notebookEditorEdit",
+            "notebookKernelSource",
+            "notebookMessaging",
+            "notebookMime",
+            "portsAttributes",
+            "quickPickSortByLabel",
+            "textDocumentNotebook",
+        }
+    )
     api_proposals["ms-toolsai.jupyter"] = list(jupyter_api_proposals)
 
     conf["extensionEnabledApiProposals"] = api_proposals

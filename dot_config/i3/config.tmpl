@@ -196,8 +196,13 @@ for_window [class="Nm-connection-editor" instance="nm-connection-editor"] floati
 for_window [class="Steam" instance="Steam" title="Friends List"] floating enable
 for_window [class="java-lang-Thread" instance="java-lang-Thread" title="win0"] floating enable
 for_window [class="Thunar" title="File Operation Progress"] floating enable
+for_window [class="chatty-Chatty" instance="chatty-Chatty"] floating enable
 
 # ---------------- Custom keybindings ---------------------
+
+# https://i3wm.org/docs/userguide.html#_scratchpad
+bindsym $mod+o scratchpad show
+bindsym $mod+Shift+o move scratchpad
 
 # Clipboard
 bindsym ctrl+$alt+c exec CM_LAUNCHER=rofi clipmenu
