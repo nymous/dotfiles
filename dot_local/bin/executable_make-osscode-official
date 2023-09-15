@@ -11,6 +11,7 @@ with open(conf_path, "r") as f:
         "itemUrl": "https://marketplace.visualstudio.com/items",
     }
     conf["nameLong"] = "Visual Studio Code"
+    conf["nameShort"] = "Code"
     # extensions = set(conf["extensionAllowedProposedApi"])
     # extensions.add("ms-vsliveshare.vsliveshare")
     # extensions.add("ms-vscode-remote.vscode-remote-extensionpack")
@@ -25,19 +26,16 @@ with open(conf_path, "r") as f:
     liveshare_api_proposals.update(
         {
             "contribMenuBarHome",
+            "contribShareMenu",
+            "contribStatusBarItems",
             "diffCommand",
             "documentFiltersExclusive",
             "fileSearchProvider",
             "findTextInFiles",
             "notebookCellExecutionState",
-            "notebookContentProvider",
-            "notebookDocumentEvents",
-            "notebookEditor",
-            "notebookEditorEdit",
             "notebookLiveShare",
             "terminalDataWriteEvent",
             "terminalDimensions",
-            "textDocumentNotebook",
             "textSearchProvider",
         }
     )
@@ -46,6 +44,7 @@ with open(conf_path, "r") as f:
     remote_wsl_api_proposals = set(api_proposals.get("ms-vscode-remote.remote-wsl", []))
     remote_wsl_api_proposals.update(
         {
+            "contribRemoteHelp",
             "contribViewsRemote",
             "resolvers",
             "telemetry",
@@ -56,8 +55,13 @@ with open(conf_path, "r") as f:
     python_api_proposals = set(api_proposals.get("ms-python.python", []))
     python_api_proposals.update(
         {
-            "notebookEditor",
+            "contribEditorContentMenu",
+            "envShellEvent",
+            "portsAttributes",
+            "quickPickItemTooltip",
             "quickPickSortByLabel",
+            "saveEditor",
+            "terminalDataWriteEvent",
             "testObserver",
         }
     )
@@ -67,8 +71,6 @@ with open(conf_path, "r") as f:
     pylance_api_proposals.update(
         {
             "notebookCellExecutionState",
-            "notebookDocumentEvents",
-            "notebookEditor",
         }
     )
     api_proposals["ms-python.vscode-pylance"] = list(pylance_api_proposals)
@@ -76,21 +78,18 @@ with open(conf_path, "r") as f:
     jupyter_api_proposals = set(api_proposals.get("ms-toolsai.jupyter", []))
     jupyter_api_proposals.update(
         {
+            "contribNotebookStaticPreloads",
+            "interactiveWindow",
             "notebookCellExecutionState",
-            "notebookConcatTextDocument",
-            "notebookControllerKind",
-            "notebookDebugOptions",
+            "notebookControllerAffinityHidden",
             "notebookDeprecated",
-            "notebookDocumentEvents",
-            "notebookEditor",
-            "notebookEditorDecorationType",
-            "notebookEditorEdit",
+            "notebookExecution",
             "notebookKernelSource",
             "notebookMessaging",
             "notebookMime",
             "portsAttributes",
+            "quickPickItemTooltip",
             "quickPickSortByLabel",
-            "textDocumentNotebook",
         }
     )
     api_proposals["ms-toolsai.jupyter"] = list(jupyter_api_proposals)
