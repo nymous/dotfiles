@@ -15,7 +15,7 @@
 	[
 		"gray_antialias"
 	],
-	"font_size": 13,
+	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -41,4 +41,8 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"dictionary": "Packages/Language - French - Français/fr_FR (modern).dic",
+	"added_words":
+	[
+		"Rézoléo",
+	],
 }
