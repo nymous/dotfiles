@@ -158,6 +158,23 @@ function notif() {
   esac
 }
 
+function ,discord-skip-update() {
+  CONFIG_PATH=~/.config/discordcanary/settings.json
+  case "$1" in
+    "true")
+      NEW_CONTENT=$(jq '.SKIP_HOST_UPDATE = true' "${CONFIG_PATH}")
+      echo $NEW_CONTENT > "${CONFIG_PATH}"
+      ;;
+    "false")
+      NEW_CONTENT=$(jq '.SKIP_HOST_UPDATE = false' "${CONFIG_PATH}")
+      echo $NEW_CONTENT > "${CONFIG_PATH}"
+      ;;
+    *)
+      echo "Use $0 <true|false> to enable or disable updates for Discord Canary"
+      ;;
+  esac
+}
+
 function ap() {
   case "$1" in
     "up")
