@@ -1,0 +1,42 @@
+[colors.primary]
+background = "0x002b36"
+foreground = "0xeaeaea"
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Home"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[H"
+key = "Home"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "End"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[F"
+key = "End"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[3~"
+key = "Delete"
+
+[scrolling]
+history = 100000
+
+[window]
+decorations = "none"
+opacity = 0.85
+
+[window.padding]
+x = 1
+y = 1
