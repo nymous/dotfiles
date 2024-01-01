@@ -104,7 +104,10 @@ makepkg -sic
 ```
 Section "Device"
         Identifier "Card0"
+        # https://wiki.archlinux.org/title/Variable_refresh_rate
         Option "VariableRefresh" "true"
+        # https://wiki.archlinux.org/title/AMDGPU#Tear_free_rendering
+        Option "TearFree" "true"
 EndSection
 ```
 7. Configure graphical session env variables: create `/etc/X11/Xsession.d/90-environment`
