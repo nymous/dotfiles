@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Visual Studio Dark",
     "files.autoSave": "onFocusChange",
     "editor.fontSize": 15,
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -30,15 +30,11 @@
     "prettier.singleQuote": true,
     "breadcrumbs.enabled": true,
     "markdown.extension.toc.levels": "2..6",
-    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "files.insertFinalNewline": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "shellcheck.customArgs": [
         "-x"
     ],
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
-    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -57,9 +53,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "python.formatting.provider": "black",
     "python.experiments.enabled": false,
-    "python.linting.mypyEnabled": true,
     "redhat.telemetry.enabled": false,
     "window.zoomLevel": 1,
     "files.exclude": {
@@ -70,7 +64,8 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "python.linting.banditEnabled": true,
     "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "strict"
+    "python.analysis.typeCheckingMode": "strict",
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "editor.stickyScroll.enabled": true
 }
