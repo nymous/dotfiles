@@ -22,6 +22,7 @@
 	conflicstyle = diff3
 
 [diff]
+	tool = difftastic
 	colorMoved = default
 
 [interactive]
@@ -37,6 +38,16 @@
 	commit-decoration-style = bold yellow box ul
 	file-style = bold yellow ul
 	file-decoration-style = none
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+	difftool = true
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

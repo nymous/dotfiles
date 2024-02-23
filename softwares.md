@@ -22,6 +22,7 @@
 - [`clipmenu`](https://github.com/cdown/clipmenu): clipboard manager
 - [`code`](https://code.visualstudio.com/): an open-source distribution of Visual Studio Code; see [the dedicated VSCode page](vscode.md) for my extensions, and to know the difference between this and a "true" Visual Studio Code
 - [`devd`](https://github.com/cortesi/devd): a local webserver for developers, with live-reload. Sister project to `modd`, see below.
+- [`difftastic`](https://github.com/Wilfred/difftastic): a diff tool that compares files based on their syntax, not line-by-line
 - [`discord-canary`](https://discord.com/): the chat app Discord Canary (canary = alpha version)
 - [`docker`](https://www.docker.com/): the de-facto container engine
 - [`docker-compose`](https://docs.docker.com/compose/): use declarative configuration files to run containers instead of remembering all `docker run` flags ^^
