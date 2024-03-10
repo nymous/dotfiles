@@ -159,7 +159,8 @@ function notif() {
 }
 
 function ,jwt-decode() {
-  jq -R '{"jwt_header": (split(".") | .[0] | @base64d | fromjson), "jwt_signature": (split(".") | .[2]), "jwt_content": (split(".") | .[1] | @base64d | fromjson)}' <<< "$1"
+  read 'jwt?JWT: '
+  jq -R '{"jwt_header": (split(".") | .[0] | @base64d | fromjson), "jwt_signature": (split(".") | .[2]), "jwt_content": (split(".") | .[1] | @base64d | fromjson)}' <<< "$jwt"
 }
 
 function ,discord-skip-update() {
