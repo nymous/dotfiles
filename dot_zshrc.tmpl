@@ -160,7 +160,7 @@ function notif() {
 
 function ,jwt-decode() {
   read 'jwt?JWT: '
-  jq -R '{"jwt_header": (split(".") | .[0] | @base64d | fromjson), "jwt_signature": (split(".") | .[2]), "jwt_content": (split(".") | .[1] | @base64d | fromjson)}' <<< "$jwt"
+  jq -R '{"jwt_header": (split(".") | .[0] | @base64d | fromjson), "jwt_signature": (split(".") | .[2]), "jwt_content": (split(".") | .[1] | @base64d | fromjson | (.exp, .iat) |= todateiso8601)}' <<< "$jwt"
 }
 
 function ,discord-skip-update() {
