@@ -115,7 +115,7 @@ EndSection
 export XDG_CURRENT_DESKTOP="i3"
 export XDG_SESSION_DESKTOP="i3"
 ```
-7. Set Xorg keymap: `localectl set-x11-keymap fr pc105 oss compose:rctrl-altgr` (the `oss` variant gives you easy access to "œ", "æ" or "…" characters, and the `compose:rctrl-altgr` option enables the [compose key](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Configuring_compose_key) for any other character you would need)
+7. Set Xorg keymap: `sudo localectl set-x11-keymap fr pc105 oss_latin9 ctrl:swapcaps,compose:rctrl-altgr` (the `oss_latin9` variant gives you easy access to "œ", "æ" or "…" characters, the `compose:rctrl-altgr` option enables the [compose key](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Configuring_compose_key) for any other character you would need (keep <kbd>AltGr</kbd> pressed then press <kbd>Right Ctrl</kbd>), and the `ctrl:swapcaps` swaps the position of <kbd>Ctrl</kbd> (often used for shortcuts but stuck in the corner) with <kbd>Caps lock</kbd> (where the pinky naturally sits))
 8. Install `numlockx`
 9. Install `i3` and choose `i3-gaps` over `i3-wm`
 10. Install a terminal, eg. `alacritty` (with `alacritty-terminfo`)
