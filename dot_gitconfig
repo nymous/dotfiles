@@ -19,7 +19,7 @@
 	ff = only
 
 [merge]
-	conflicstyle = diff3
+	conflictstyle = diff3
 
 [diff]
 	tool = difftastic
