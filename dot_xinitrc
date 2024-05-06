@@ -40,5 +40,4 @@ export XDG_CURRENT_DESKTOP="i3"
 export XDG_CURRENT_SESSION="$XDG_CURRENT_DESKTOP"
 
 numlockx &
-setxkbmap fr
 exec i3
