@@ -39,7 +39,7 @@ LC_TIME=en_DK.UTF-8
 ```
 18. Set the root password (make sure you have the correct keyboard layout!): `passwd`
 19. Install `systemd-boot`: make sure the ESP is mounted on `/boot` and run `bootctl --path=/boot install`
-20. Create a post-install hook to automatically update systemd-boot in the ESP when the package is upgraded: `/etc/pacman.d/hooks/100-systemd-boot.hook`
+20. Enable `systemd-boot-update.service`, and create a post-install hook to automatically update systemd-boot in the ESP when the package is upgraded: `/etc/pacman.d/hooks/100-systemd-boot.hook`
 ```ini
 [Trigger]
 Type = Package
@@ -47,9 +47,9 @@ Operation = Upgrade
 Target = systemd
 
 [Action]
-Description = Updating systemd-boot...
+Description = Gracefully upgrading systemd-boot...
 When = PostTransaction
-Exec = /usr/bin/bootctl update
+Exec = /usr/bin/systemctl restart systemd-boot-update.service
 ```
 1.  Install CPU microcode: `pacman -Sy amd-ucode`
 2.  Create a new boot entry which combines Linux and the microcode (to insert the UUID in the vim file, run `:r!blkid -o value /dev/<whatever> | head -n1`): `/boot/loader/entries/arch.conf`
