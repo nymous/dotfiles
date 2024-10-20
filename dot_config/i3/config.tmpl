@@ -198,6 +198,7 @@ for_window [class="java-lang-Thread" instance="java-lang-Thread" title="win0"] f
 for_window [class="Thunar" title="File Operation Progress"] floating enable
 for_window [class="chatty-Chatty" instance="chatty-Chatty"] floating enable
 for_window [title="Waydroid"] floating enable, resize set 720 1280
+for_window [class="kdeconnect.daemon"] fullscreen disable; floating enable; resize set width 3440 height 1440; move absolute position center
 
 # ---------------- Custom keybindings ---------------------
 
@@ -253,6 +254,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id clipmenud
 exec --no-startup-id variety
 exec --no-startup-id thunar --daemon
+exec --no-startup-id snixembed --fork
 exec --no-startup-id safeeyes
 exec --no-startup-id lxsession
 #exec_always --no-startup-id killall picom; picom --experimental-backends
