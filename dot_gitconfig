@@ -8,6 +8,10 @@
 
 [alias]
 	it = !git init && git commit -m "root" --allow-empty
+	# Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+	dlog = -c diff.external=difft log --ext-diff
+	dshow = -c diff.external=difft show --ext-diff
+	ddiff = -c diff.external=difft diff
 
 [includeIf "gitdir:~/Documents/Adeo/"]
 	path = ~/Documents/Adeo/gitconfig_include
@@ -22,7 +26,6 @@
 	conflictstyle = diff3
 
 [diff]
-	tool = difftastic
 	colorMoved = default
 
 [interactive]
@@ -38,15 +41,6 @@
 	commit-decoration-style = bold yellow box ul
 	file-style = bold yellow ul
 	file-decoration-style = none
-
-[difftool]
-	prompt = false
-
-[difftool "difftastic"]
-	cmd = difft "$LOCAL" "$REMOTE"
-
-[pager]
-	difftool = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
